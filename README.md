@@ -19,38 +19,38 @@ root
 ├── README.md
 └── scenarios
     ├── bing
-    │   └── search-and-filter
-    │       └── bing.feature
+    │   └── search-and-filters.feature
+    │       
     └── google
-        └── search-and-filter
-            └── google.feature
+        └── search-and-filters.feature
 ```
 
 ---
 
-## Scenario's example (`bing.feature`)
+## Scenario's example (`bing`)
 
 ```gherkin
-Feature: Search on Bing by category
-  In order to verify Bing search works with different categories
+Feature: Bing search with category filtering
+  To confirm that Bing search can be filtered by category
   As a QA engineer
-  I want to test searching "semrush ai" with category filters
+  I want to check results for the query "semrush ai" using different categories
 
-  Scenario: Search "semrush ai" in All category
-    Given I open Bing homepage
-    When I search for "semrush ai"
-    Then I should see results related to "semrush ai" in All category
+  Scenario: Show results in All category
+    Given User opens the Bing homepage
+    When User types "semrush ai" into the search box
+    And User presses Enter to view the results page
+    And User clicks on the "All" category tab
+    Then User should see general results related to "semrush ai"
 ```
 
 ---
 
 ## How to Update
-- To add new test cases, simply add more **`Scenario`** blocks or use **`Scenario Outline`** with an `Examples` table.  
-- This makes the scenarios reusable and easy to extend without code changes.  
+- To add new test cases, simply add more **`Scenario`** blocks in related folder e.g. bing
 
 ---
 
 ## Summary
 This repository contains **test scenarios only** for Bing and Google search.  
 They are written in **Gherkin syntax** for readability, maintainability, and ease of collaboration.  
-Other QA Engineers can easily extend them with new filters, queries, or date ranges.  
+Other QA Engineers can easily extend them with new filters  
